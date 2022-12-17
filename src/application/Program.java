@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
+        SellerDao sellerDao = DaoFactory.createSellerDao();
 
         /*
         Department dp = new Department(3,"Tvs");
@@ -23,7 +24,6 @@ public class Program {
 
         /*
         // TESTE 2
-        SellerDao sellerDao = DaoFactory.createSellerDao();
         Seller seller = sellerDao.findById(3);
 
         Department dep = new Department(2,null);
@@ -35,19 +35,26 @@ public class Program {
 
         // TESTE 3
         /*
-        SellerDao sellerDao = DaoFactory.createSellerDao();
         List<Seller> lista = sellerDao.findall();
         for (Seller obj : lista) {
             System.out.println(obj);
         }
          */
 
+        /*
         //TESTE 4
         Department dep = new Department(2,null);
-        SellerDao sellerDao = DaoFactory.createSellerDao();
         Seller seller = new Seller(null,"Greg","greg@gmail.com",new Date(),4000.0,dep);
         sellerDao.insert(seller);
         System.out.println("Dados Inseridos, Novo Id="+seller.getId());
+         */
+
+        //TESTE 5
+        Seller seller = new Seller();
+        seller = sellerDao.findById(1);
+        seller.setName("Marcos Wayne");
+        sellerDao.update(seller);
+        System.out.println("UPDATE COMPLETE");
 
 
 
