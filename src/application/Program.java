@@ -34,11 +34,21 @@ public class Program {
          */
 
         // TESTE 3
+        /*
         SellerDao sellerDao = DaoFactory.createSellerDao();
         List<Seller> lista = sellerDao.findall();
         for (Seller obj : lista) {
             System.out.println(obj);
         }
+         */
+
+        //TESTE 4
+        Department dep = new Department(2,null);
+        SellerDao sellerDao = DaoFactory.createSellerDao();
+        Seller seller = new Seller(null,"Greg","greg@gmail.com",new Date(),4000.0,dep);
+        sellerDao.insert(seller);
+        System.out.println("Dados Inseridos, Novo Id="+seller.getId());
+
 
 
     }
