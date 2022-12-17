@@ -21,6 +21,8 @@ public class Program {
 
          */
 
+        /*
+        // TESTE 2
         SellerDao sellerDao = DaoFactory.createSellerDao();
         Seller seller = sellerDao.findById(3);
 
@@ -29,10 +31,15 @@ public class Program {
         for (Seller obj : lista) {
             System.out.println(obj);
         }
+         */
 
+        // TESTE 3
+        SellerDao sellerDao = DaoFactory.createSellerDao();
+        List<Seller> lista = sellerDao.findall();
+        for (Seller obj : lista) {
+            System.out.println(obj);
+        }
 
-
-        System.out.println(seller);
 
     }
 }
